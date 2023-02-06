@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  invoice_id: MyString
+  invoice_number: MyString
+  date_created: MyString
+  reference: MyString
+  status: MyString
+  total: MyString
+  currency_code: MyString
+  sub_total: MyString
+  total_tax: MyString
+  due_date: MyString
+  amount_due: MyString
+  amount_paid: MyString
+  fully_paid_on_date: MyString
+  contact: MyString
+
+two:
+  invoice_id: MyString
+  invoice_number: MyString
+  date_created: MyString
+  reference: MyString
+  status: MyString
+  total: MyString
+  currency_code: MyString
+  sub_total: MyString
+  total_tax: MyString
+  due_date: MyString
+  amount_due: MyString
+  amount_paid: MyString
+  fully_paid_on_date: MyString
+  contact: MyString

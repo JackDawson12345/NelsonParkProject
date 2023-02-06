@@ -1,0 +1,38 @@
+<div style="padding: 30px; height: inherit;     display: flex; flex-direction: column; align-items: center; justify-content: center;">
+
+  <%= image_tag "newlogo.png", height: 120 %>
+
+  <h1 style="font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 400; color: #195383; margin: 10px 0px 0px 0px;">Nelson Parks - Payment Portal</h1>
+  <h3 style="font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 400; color: #337ab7; margin: 5px 0px;">Please use the box below to login and view your account.</h3>
+
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field" style="display: flex; align-items: center; justify-content: space-between;     margin: 5px 0px;">
+      <%= f.label :email, class: 'sign-up-form-label' %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'sign-up-form' %>
+    </div>
+
+    <div class="field" style="display: flex; align-items: center; justify-content: space-between;     margin: 5px 0px;">
+      <%= f.label :password, class: 'sign-up-form-label' %><br />
+      <%= f.password_field :password, autocomplete: "current-password", class: 'sign-up-form' %>
+    </div>
+
+    <%# if devise_mapping.rememberable? %>
+    <!--       <div class="field">-->
+    <%#= f.check_box :remember_me %>
+    <%#= f.label :remember_me %>
+    <!--       </div>-->
+    <%# end %>
+
+    <div class="actions">
+      <%= f.submit "Login >",  class: 'sign-up-form-button'  %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+
+</div>
+
+
+
+

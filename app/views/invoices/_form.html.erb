@@ -1,0 +1,87 @@
+<%= form_with(model: invoice) do |form| %>
+  <% if invoice.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
+
+      <ul>
+        <% invoice.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :invoice_id, style: "display: block" %>
+    <%= form.text_field :invoice_id %>
+  </div>
+
+  <div>
+    <%= form.label :invoice_number, style: "display: block" %>
+    <%= form.text_field :invoice_number %>
+  </div>
+
+  <div>
+    <%= form.label :date_created, style: "display: block" %>
+    <%= form.text_field :date_created %>
+  </div>
+
+  <div>
+    <%= form.label :reference, style: "display: block" %>
+    <%= form.text_field :reference %>
+  </div>
+
+  <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div>
+    <%= form.label :total, style: "display: block" %>
+    <%= form.text_field :total %>
+  </div>
+
+  <div>
+    <%= form.label :currency_code, style: "display: block" %>
+    <%= form.text_field :currency_code %>
+  </div>
+
+  <div>
+    <%= form.label :sub_total, style: "display: block" %>
+    <%= form.text_field :sub_total %>
+  </div>
+
+  <div>
+    <%= form.label :total_tax, style: "display: block" %>
+    <%= form.text_field :total_tax %>
+  </div>
+
+  <div>
+    <%= form.label :due_date, style: "display: block" %>
+    <%= form.text_field :due_date %>
+  </div>
+
+  <div>
+    <%= form.label :amount_due, style: "display: block" %>
+    <%= form.text_field :amount_due %>
+  </div>
+
+  <div>
+    <%= form.label :amount_paid, style: "display: block" %>
+    <%= form.text_field :amount_paid %>
+  </div>
+
+  <div>
+    <%= form.label :fully_paid_on_date, style: "display: block" %>
+    <%= form.text_field :fully_paid_on_date %>
+  </div>
+
+  <div>
+    <%= form.label :contact, style: "display: block" %>
+    <%= form.text_field :contact %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

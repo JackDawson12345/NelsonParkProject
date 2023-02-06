@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NelsonParksProject</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
+
+  <body style="height: 100vh; width: 100vw; display: flex; align-items: center; justify-content: center; flex-direction: column; background: linear-gradient(180deg, rgba(51,122,183,1) 0%, rgba(255,255,255,1) 100%);">
+  <div style="width: 95%; height: 87.5%; background: white;">
+    <p class="notice-section" style="position: absolute; top: 5px; margin: 0px; width: 95%; height: 30px; background: #4BB543; display: flex; align-items: center; justify-content: center; font-family: 'Roboto', sans-serif; font-size: 18px; font-weight: 400; color: white;" class="notice"><%= notice %></p>
+    <p style="position: absolute; top: 0px;" class="alert"><%= alert %></p>
+
+    <% if user_signed_in? %>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 50px">
+
+        <div style="font-size: 26px; color: #195383;"><i class="fa-solid fa-house-chimney"></i></div>
+        <div style="display: flex; flex-direction: column; align-items: flex-end;">
+          <p style="font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 400; color: #195383; margin: 0px;">Welcome <%= current_user.email %></p>
+          <%= button_to "Logout >", destroy_user_session_path, method: :delete, class: 'logout-button'  %>
+        </div>
+
+      </div>
+    <% end %>
+
+    <%= yield %>
+  </div>
+  </body>
+
+  <script type="text/javascript" charset="utf-8">
+      if($('.notice-section').is(':empty')){
+          $('.notice-section').hide()
+      }
+  </script>
+</html>
